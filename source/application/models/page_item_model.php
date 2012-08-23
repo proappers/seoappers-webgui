@@ -2,9 +2,11 @@
 
 class Page_item_model extends CI_Model {
 
-	public function __construct() {
-	
-	}
+    function __construct()
+    {
+        // Call the Model constructor
+        parent::__construct();
+    }
 	
 	public function get_results_by_page_id($id = false) {
 		if(!$id) {
