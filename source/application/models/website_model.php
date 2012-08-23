@@ -19,7 +19,7 @@ class Website_model extends CI_Model {
 	
 	public function get_websites() {
 		$query = $this->db->get('website');
-		$this->db->order_by('created', 'desc');
+		#$this->db->order_by('created', 'desc');
 		
 		return $query->result();
 	}

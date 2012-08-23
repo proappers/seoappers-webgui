@@ -10,13 +10,15 @@ class Home extends CI_Controller {
 		$this->load->model('Page_model');
 		$this->load->model('Website_model');
 		$this->load->model('Page_item_model');
+		$this->load->helper('menu');
 		
 	}
 	
 	public function index() {
-		$data['websites'] = $this->Website_model->get_websites();
+		$data = menu();
 		
 		$this->load->view('homeview', $data);
+		
 	}
 	
 }

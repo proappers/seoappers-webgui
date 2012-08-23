@@ -63,7 +63,19 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
+				<?php foreach($websites as $site) { ?>
 				
+					<li class="nav-header"><?=$site->name?></li>
+					
+					<?php foreach($crawls["$site->website_id"] as $crawl) { ?>
+						
+						<li>
+							<a href="<?=base_url()?>crawl/<?=$crawl->crawl_id?>">Crawl <?=$crawl->date_created?></a>
+						</li>
+						
+					<?php } ?>
+				
+				<?php } ?>
 			
 			
               <li class="nav-header">mcw-partner.de</li>
