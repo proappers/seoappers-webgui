@@ -16,7 +16,7 @@ class Home extends CI_Controller {
 	public function index() {
 		$data['websites'] = $this->Website_model->get_websites();
 		
-		var_dump($data['websites']);
+		$this->load->view('homeview', $data);
 	}
 	
 }
