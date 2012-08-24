@@ -11,11 +11,16 @@ class Home extends CI_Controller {
 		$this->load->model('Website_model');
 		$this->load->model('Page_item_model');
 		$this->load->helper('menu');
+		$this->load->helper('crawl');
 		
 	}
 	
-	public function index() {
+	public function index($crawl_id) {
 		$data = menu();
+		
+		$data['pages'] = crawl($crawl_id);
+		
+		echo $crawl_id;
 		
 		$this->load->view('homeview', $data);
 		
