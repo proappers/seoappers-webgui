@@ -25,7 +25,7 @@ class Website_model extends CI_Model {
 	}
 	
 	public function add_website($url = false, $name = false, $state = false, $seo_score = false, $created = false, $max_sites = false) {
-		if(!($url & $name & $state & $seo_score & $created & $max_sites)) {
+		if(!($url | $name | $state | $seo_score | $created | $max_sites)) {
 			return false;
 		}
 		
