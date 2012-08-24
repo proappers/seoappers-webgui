@@ -70,26 +70,14 @@
 					<?php foreach($crawls["$site->website_id"] as $crawl) { ?>
 						
 						<li>
-							<a href="<?=base_url()?>crawl/<?=$crawl->crawl_id?>">Crawl <?=$crawl->date_created?></a>
+							<a href="<?=base_url()?>index.php/home/index/<?=$crawl->crawl_id?>">Crawl <?=$crawl->date_created?></a>
 						</li>
 						
 					<?php } ?>
 				
 				<?php } ?>
 			
-			
-              <li class="nav-header">mcw-partner.de</li>
-              <li class="active"><a href="#">Crawl 2012-08-23 01:44</a></li>
-              <li><a href="#">Crawl 2012-08-23 01:44</a></li>
-              <li><a href="#">Crawl 2012-08-18 17:53</a></li>
-              <li><a href="#">... open crawl history</a></li>
-              <li class="nav-header">h-quadrat.com</li>
-              <li><a href="#">Crawl 2012-08-19 20:53</a></li>
-              <li><a href="#">Crawl 2012-08-09 10:53</a></li>
-              <li><a href="#">... open crawl history</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Website hinzufügen</a></li>
-            </ul>
+			</ul>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
@@ -100,66 +88,85 @@
 			<p>Hier kommen ein paar lustige Diagramme mit performance-Daten von Jens.</p>
           </div>
 
-		<ul class="breadcrumb">
-			<li><a href="#">mcw-partner-steuerberater</a> <span class="divider">/</span></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
+		
+		<?php foreach($pages as $page) { ?>
+		
+		<ul class="breadcrumb" style="margin-bottom: 0;">
+			<li><a href="#"><?=$page['page_data']->path?></a></li>
+			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;" data-toggle="collapse" data-target="#result<?=$page['page_data']->page_id?>">- Ergebnisse verbergen</a></li>
 		</ul>
+		
+		<div id="result<?=$page['page_data']->page_id?>" class="accordion-group in collapse" style="margin: 4px 0 8px 0;">
+				<div class="accordion-inner" style="border-top: 0;">
 
-		<ul class="breadcrumb">
+							<div class="span8">
+							
+								<?php foreach($page['page_items'] as $page_item) { ?>
+								<dl class="dl-horizontal">
+								<dt><?=$page_item->page_item_key?></dt>
+								<dd><?=$page_item->page_value?></dd>
+								</dl>
+								<?php } ?>
+	
+							</div>
+							<div class="span4">
+								Fuuu Bar
+							</div>
+
+				</div>
+		</div>
+		<?php } ?>
+		
+		<ul class="breadcrumb" style="margin-bottom: 0;">
 			<li><a href="#">..</a> <span class="divider">/</span></li>
 			<li><a href="#">philosophie-steuerberatung</a></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">- Ergebnisse verbergen</a></li>
+			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;" data-toggle="collapse" data-target="#result21">- Ergebnisse verbergen</a></li>
 		</ul>
 
-		<ul class="breadcrumb">
-			<li><a href="#">..</a> <span class="divider">/</span></li>
-			<li><a href="#">team</a></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+		<div id="result21" class="accordion-group in collapse" style="margin: 4px 0 8px 0;">
+				<div class="accordion-inner" style="border-top: 0;">
 
-		<ul class="breadcrumb">
-			<li><a href="#">leistungsuebersicht-steuerberater</a> <span class="divider">/</span></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+							<div class="span8">
 
-		<ul class="breadcrumb">
-			<li><a href="#">..</a> <span class="divider">/</span></li>
-			<li><a href="#">steuerberatung</a></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+								<dl class="dl-horizontal">
+								<dt>meta title</dt>
+								<dd>Steuerberater in Rüsselsheim - tax advisory services Rüsselsheim</dd>
+								</dl>
 
-		<ul class="breadcrumb">
-			<li><a href="#">..</a> <span class="divider">/</span></li>
-			<li><a href="#">buchfuehrung-lohn</a></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+								<dl class="dl-horizontal">
+								<dt>meta descr</dt>
+								<dd>Leistungen der Steuerberatung umfassen gestaltende und deklatorische Steuerberatung. Ferner die Rechtsformwahl, Unternehmensnachfolge, Erbschaftsteuer und Beratung von Vereinen, Stiftungen.</dd>
+								</dl>
 
-		<ul class="breadcrumb">
-			<li><a href="#">..</a> <span class="divider">/</span></li>
-			<li><a href="#">bilanzierung</a></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+								<dl class="dl-horizontal">
+								<dt>meta keywords</dt>
+								<dd>Steuerberatung, Rechtsform, Unternehmensnachfolge, Erbschaftsteuer, Beratung, Vereine, Stiftung</dd>
+								</dl>
 
-		<ul class="breadcrumb">
-			<li><a href="#">..</a> <span class="divider">/</span></li>
-			<li><a href="#">betriebswirtschaftliche-beratung</a></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+								<dl class="dl-horizontal">
+								<dt>Heading 1</dt>
+								<dd>Steuerberatung</dd>
+								</dl>
 
-		<ul class="breadcrumb">
-			<li><a href="#">links</a> <span class="divider">/</span></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+								<dl class="dl-horizontal">
+								<dt>Heading 2</dt>
+								<dd>...</dd>
+								</dl>
 
-		<ul class="breadcrumb">
-			<li><a href="#">steuernews</a> <span class="divider">/</span></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+								<dl class="dl-horizontal">
+								<dt>Heading 2</dt>
+								<dd>...</dd>
+								</dl>
 
-		<ul class="breadcrumb">
-			<li><a href="#">kontakt</a> <span class="divider">/</span></li>
-			<li style="float: right;"><a href="#" style="color: #000;text-decoration: underline;">+ Ergebnisse anzeigen</a></li>
-		</ul>
+							</div>
+							<div class="span4">
+								Le coque sportiv!
+							</div>
+
+				</div>
+		</div>
+
+		
 
           <div class="row-fluid">
             <div class="span4">
@@ -205,10 +212,14 @@
       </footer>
 
     </div><!--/.fluid-container-->
-<!--
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="<?=base_url()?>statics/js/bootstrap.js"></script>
 
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
+			<script type="text/javascript">
+				$(".collapse").collapse()
+			</script>
+<!--
     <script src="../assets/js/bootstrap-alert.js"></script>
     <script src="../assets/js/bootstrap-modal.js"></script>
     <script src="../assets/js/bootstrap-dropdown.js"></script>
