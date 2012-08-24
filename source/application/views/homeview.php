@@ -17,6 +17,15 @@
       .sidebar-nav {
         padding: 9px 0;
       }
+
+		.hero-unit {
+			padding: 3em;
+		}
+
+		.hero-unit h1 {
+			font-size: 180%;
+			margin-bottom: 1.4em;
+		}
     </style>
     <link href="<?=base_url()?>/statics/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -85,9 +94,26 @@
           <div class="hero-unit">
 			  <div><a href="#" class="btn btn-success" style="float: right; font-size: 140%;">JeGaDe Score<br /><span style="font-size: 210%;">82</span></a></div>
 			<h1>mcw-partner.de - 2012-08-23 01:44</h1>
-			<p>Hier kommen ein paar lustige Diagramme mit performance-Daten von Jens.</p>
+			<div class="span2" style="margin: 0;">
+				Dauer: 132 Sekunden<br />
+				Gecrawlte Seiten: 28<br /><br />
+				Warnungen: 12<br />
+				Schwere Fehler: 3
+			</div>
+			<div class="span2" style="margin: 0;">
+				Hier kommen ein paar lustige Diagramme mit performance-Daten von Jens.
+			</div>
+			<div class="span2" style="margin: 0;">
+				Hier kommen ein paar lustige Diagramme mit performance-Daten von Jens.
+			</div>
+			<div class="span2" style="margin: 0;">
+				Hier kommen ein paar lustige Diagramme mit performance-Daten von Jens.
+			</div>
+			<div class="span2" style="margin: 0;">
+				Hier kommen ein paar lustige Diagramme mit performance-Daten von Jens.
+			</div>
+			<br clear="all" />
           </div>
-
 		
 		<?php foreach($pages as $page) { ?>
 		

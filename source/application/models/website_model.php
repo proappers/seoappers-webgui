@@ -24,4 +24,21 @@ class Website_model extends CI_Model {
 		return $query->result();
 	}
 	
+	public function add_website($url = false, $name = false, $state = false, $seo_score = false, $created = false, $max_sites = false) {
+		if(!($url & $name & $state & $seo_score & $created & $max_sites)) {
+			return false;
+		}
+		
+		$data = array(
+			'url' => $url,
+			'name' => $name,
+			'state' => $state,
+			'seo_score' => $seo_score,
+			'created' => $created,
+			'max_sites' => $max_sites
+		);
+		
+		$this->db->insert('website', $data);
+	}
+	
 }
