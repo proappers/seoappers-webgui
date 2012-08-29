@@ -15,7 +15,11 @@ class Home extends CI_Controller {
 		
 	}
 	
-	public function index($crawl_id) {
+	public function index($crawl_id = false) {
+		if(!$crawl_id) {
+			$crawl_id = $this->Crawl_model->get_last_crawl();
+		}
+	
 		$data = menu();
 		
 		$data['pages'] = crawl($crawl_id);
