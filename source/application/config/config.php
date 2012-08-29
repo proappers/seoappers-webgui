@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://178.200.4.231/seoappers-webgui/seoappers-webgui/source/';
+$config['base_url']	= 'http://192.168.0.103/seoappers-webgui/seoappers-webgui/source';
 
 /*
 |--------------------------------------------------------------------------

@@ -25,5 +25,11 @@ class Crawl_model extends CI_Model {
 		
 		return $query->result();
 	}
+	
+	public function get_last_crawl() {
+		$query = $this->db->get('crawl');
+		$last = $query->last_row('array');
+		return $last['crawl_id'];
+	}
 
 }
