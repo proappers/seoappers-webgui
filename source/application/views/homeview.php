@@ -95,7 +95,7 @@
 			  <div><a href="#" class="btn btn-success" style="float: right; font-size: 140%;">JeGaDe Score<br /><span style="font-size: 210%;">82</span></a></div>
 			<h1>mcw-partner.de - 2012-08-23 01:44</h1>
 			<div class="span2" style="margin: 0;">
-				Dauer: 132 Sekunden<br />
+				Dauer: <?php $dauer = datediff($active_crawl[0]->date_started, $active_crawl[0]->date_finished); echo $dauer['hours'].' Stunden '.$dauer['minutes'].' Minuten'?><br />
 				Gecrawlte Seiten: 28<br /><br />
 				Warnungen: 12<br />
 				Schwere Fehler: 3

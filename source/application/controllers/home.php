@@ -25,7 +25,7 @@ class Home extends CI_Controller {
 		$data['active_crawl'] = $this->Crawl_model->get_results_by_crawl_id($crawl_id);
 		$data['pages'] = crawl($crawl_id);
 		
-		var_dump($data);
+		#var_dump($data);
 		
 		$this->load->view('homeview', $data);
 		
